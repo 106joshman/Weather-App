@@ -5,15 +5,17 @@
 }
 
 body {
-  height: 51vw;
+  /* height: 100vh;
+  width: 100%; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./components/images/images.jpeg);
+  /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/public/images.jpeg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  background: var(--bg-light);
 }
 
 .App {
@@ -28,7 +30,6 @@ body {
   --txt-light: #fff;
   --txt-gray: rgba(255, 255, 255, 0.356);
   --reg-fnt: 12vw;
-  --anime: background 0.3s ease-in-out;
 }
 
 /*============
@@ -36,7 +37,7 @@ header styling
 ===============*/
 
 .header {
-  /* background: #100818; */
+  background: #100818;
   display: flex;
   color: var(--txt-light);
   padding: 10px 20px;
@@ -71,7 +72,7 @@ form {
 input {
   width: 85%;
   border-radius: 10px 0 0 10px;
-  background: transparent;
+  /* background: transparent; */
   padding: 8px;
   height: 30px;
   border: none;
@@ -80,7 +81,7 @@ input {
 
 input::placeholder {
   padding-left: 8px;
-  color: var(--bg-dark);
+  color: var(--bg-light);
 }
 
 form button {
@@ -108,4 +109,19 @@ the body
   margin: 10px 25px;
   font-size: 22px;
   color: var(--txt-light);
+}
+
+.wraper {
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+}
+
+.cards {
+  margin: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  color: var(--txt-light);
+  font-size: 22px;
 }

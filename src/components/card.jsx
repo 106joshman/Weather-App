@@ -4,6 +4,7 @@ const Card = () => {
     return (
         <div className="card">
             <span>Monday</span>
+            <p>22/16</p>
         </div>
     );
 }
