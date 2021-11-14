@@ -1,14 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  height: 51vw;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./components/images/images.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App {
@@ -16,15 +21,25 @@ body {
   flex-direction: column;
 }
 
+:root {
+  --bg-dark: #100818;
+  --bg-light: #182038;
+  --shadow: 0 15px 25px rgba(0,0,0,0.8);
+  --txt-light: #fff;
+  --txt-gray: rgba(255, 255, 255, 0.356);
+  --reg-fnt: 12vw;
+  --anime: background 0.3s ease-in-out;
+}
+
 /*============
 header styling
 ===============*/
 
 .header {
-  background: black;
+  /* background: #100818; */
   display: flex;
-  color: white;
-  padding: 13px 30px;
+  color: var(--txt-light);
+  padding: 10px 20px;
   align-items: center;
   justify-content: space-between;
 }
@@ -41,7 +56,56 @@ header logo
   font-size: 22px;
 }
 
-.link a{
+/* =========
+header search-box
+=========== */
+form {
+  display: flex;
+  flex-direction: row;
+  width: 350px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--txt-gray);
+}
+
+input {
+  width: 85%;
+  border-radius: 10px 0 0 10px;
+  background: transparent;
+  padding: 8px;
+  height: 30px;
+  border: none;
+  outline: none;
+}
+
+input::placeholder {
+  padding-left: 8px;
+  color: var(--bg-dark);
+}
+
+form button {
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background: var(--bg-dark);
+  color: var(--txt-light);
+  padding: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* =========
+header contact
+=========== */
+.link a {
   text-decoration: none;
-  color: white;
+  color: var(--txt-light);
+}
+
+/*==========
+the body
+========== */
+.title {
+  margin: 10px 25px;
+  font-size: 22px;
+  color: var(--txt-light);
 }
