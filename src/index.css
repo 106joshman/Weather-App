@@ -5,17 +5,18 @@
 }
 
 body {
-  /* height: 100vh;
-  width: 100%; */
+  height: 100vh;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/public/images.jpeg);
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./components/images/images.jpeg);
   background-repeat: no-repeat;
-  background-size: cover; */
-  background: var(--bg-light);
+  background-size: cover;
+  background-position: center;
+  /* background: var(--bg-light); */
 }
 
 .App {
@@ -124,4 +125,10 @@ the body
   text-align: center;
   color: var(--txt-light);
   font-size: 22px;
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    width: 250px;
+  }
 }
