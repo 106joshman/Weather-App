@@ -34,7 +34,7 @@ loader styling
 .load {
   width: 100%;
   height: 50vh;
-  background: white;
+  background: rgb(95, 92, 92);
 }
 
 .loader {
