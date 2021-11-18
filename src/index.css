@@ -5,23 +5,18 @@
 }
 
 body {
-  height: 100vh;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./components/images/images.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /* background: var(--bg-light); */
 }
 
 .App {
   flex: 1;
   flex-direction: column;
+  background: url(./components/images/images.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
 }
 
 :root {
@@ -30,8 +25,38 @@ body {
   --shadow: 0 15px 25px rgba(0,0,0,0.8);
   --txt-light: #fff;
   --txt-gray: rgba(255, 255, 255, 0.356);
-  --reg-fnt: 12vw;
+  --reg-fnt: 10vw;
 }
+
+/*============
+loader styling
+===============*/
+.load {
+  width: 100%;
+  height: 50vh;
+  background: white;
+}
+
+.loader {
+  margin: 150px auto;
+  border: 16px solid gray;
+  border-top: 16px solid #182038;
+  border-bottom: 16px solid #182038;
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 /*============
 header styling
@@ -41,43 +66,41 @@ header styling
   background: #100818;
   display: flex;
   color: var(--txt-light);
-  padding: 10px 20px;
+  padding: 5px;
   align-items: center;
-  justify-content: space-between;
-}
-
-/* =========
-header logo
-=========== */
-.header-logo{
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.header-logo span{
-  font-size: 22px;
 }
 
 /* =========
 header search-box
 =========== */
+.search-box {
+  margin-left: 35%;
+}
+
 form {
   display: flex;
-  flex-direction: row;
-  width: 350px;
+  width: 400px;
   height: 30px;
   border-radius: 10px;
   border: 1px solid var(--txt-gray);
 }
 
 input {
-  width: 85%;
-  border-radius: 10px 0 0 10px;
-  /* background: transparent; */
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 8px;
   height: 30px;
+  color: var(--bg-light);
   border: none;
   outline: none;
+  cursor: pointer;
+  transition: 0.4 ease;
+  font-size: 18px;
+}
+
+input:focus {
+  background-color: var(--txt-light);
 }
 
 input::placeholder {
@@ -85,50 +108,232 @@ input::placeholder {
   color: var(--bg-light);
 }
 
-form button {
-  border: none;
-  border-radius: 0 10px 10px 0;
-  background: var(--bg-dark);
-  color: var(--txt-light);
-  padding: 5px;
-  outline: none;
-  cursor: pointer;
-}
-
-/* =========
-header contact
-=========== */
-.link a {
-  text-decoration: none;
-  color: var(--txt-light);
-}
-
 /*==========
-the body
+the weather display
 ========== */
-.title {
-  margin: 10px 25px;
-  font-size: 22px;
-  color: var(--txt-light);
+.wrapper {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .wraper {
-  margin: 20px auto;
+  margin: 30px auto 0;
   width: 80%;
+  height: 100%;
   text-align: center;
+  color: var(--txt-light);
+}
+
+/*  */
+.weather {
+  color: var(--txt-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.weather .show-date {
+  margin-left: 32px;
+}
+
+.show-date p {
+  font-size: 32px;
+}
+
+.show-date p:nth-child(1) {
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  font-weight: 500;
+}
+
+.temp {
+  height: 180px;
+  margin: 20px 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.fig {
+  background-color: rgba(255, 255, 255, 0.397);
+  border-radius: 12px;
+  padding: 15px ;
+}
+
+.fig .deg {
+  padding: 15px;
+  font-size: 80px;
+}
+
+.temp .img {
+  background-image: url(./components/images/rain-small.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  vertical-align: middle;
+}
+
+.temp .heavy {
+  background-image: url(./components/images/rain-big.png);
+}
+
+.temp .shower {
+  background-image: url(./components/images/Shower.png);
+}
+
+.reading {
+  margin: 10px auto;
+
+  border-top: 2px solid rgba(226, 224, 224, 0.527);
+  border-bottom: 2px solid rgba(226, 224, 224, 0.527);
+  border-radius: 16px;
+
+  display: flex;
+  text-align: center;
+  color: white;
+  justify-content: space-evenly;
+  align-items: center;
+
+  font-size: 32px;
+  line-height: 2;
+  height: 100px;
+  width: 600px;
+}
+
+.low {
+  color: rgb(0, 255, 98);
+}
+
+.range {
+  display: flex;
+  padding: 5px;
+  width: 130px;
+}
+
+.update {
+  margin-top: 20px;
+  color: #fff;
+}
+
+.card-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  color: var(--txt-light);
 }
 
 .cards {
-  margin: 20px 10px;
   display: flex;
-  flex-direction: row;
-  text-align: center;
-  color: var(--txt-light);
-  font-size: 22px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px 12px 0px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgba(29, 26, 26, 0.397);
 }
 
+.card .img {
+  background-image: url(./components/images/rain-small.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+}
+
+.card .heavy {
+  background-image: url(./components/images/rain-big.png);
+}
+
+.card .shower {
+  background-image: url(./components/images/Shower.png);
+}
+
+.day {
+  background-color: rgba(10, 9, 9, 0.397);
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.card .temp-val {
+  padding: 5px;
+}
+
+/*==========
+tablet screen orientation
+========== */
 @media screen and (max-width: 768px) {
   form {
-    width: 250px;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .temp .img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .fig {
+    height: 150px;
+  }
+
+  .fig .deg {
+    font-size: 60px;
+  }
+
+  .reading {
+    margin: 10p auto;
+    width: 400px;
+  }
+
+  .update .card-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .cards {
+    width: 120px;
+    height: 120px;
+
+  }
+
+  .cards img {
+    width: 52%;
+  }
+}
+
+/*==========
+mobile phone screen
+========== */
+@media screen and (max-width: 500px) {
+  .search-box {
+    margin-left: 18%;
+  }
+  
+  form {
+    width: 300px;
+  }
+
+  .show-date p {
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .cards {
+    width: 100px;
+    height: 120px;
+
   }
 }
