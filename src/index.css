@@ -151,7 +151,7 @@ the weather display
 
 .temp {
   height: 180px;
-  margin: 20px 0;
+  margin: 0 15px 18px;
 
   display: flex;
   flex-direction: row;
@@ -189,7 +189,7 @@ the weather display
 }
 
 .reading {
-  margin: 10px auto;
+  margin: 5px auto 10px auto;
 
   border-top: 2px solid rgba(226, 224, 224, 0.527);
   border-bottom: 2px solid rgba(226, 224, 224, 0.527);
@@ -218,7 +218,7 @@ the weather display
 }
 
 .update {
-  margin-top: 20px;
+  margin-top: 15px;
   color: #fff;
 }
 
@@ -278,9 +278,31 @@ tablet screen orientation
   form {
     width: 300px;
   }
+
+  .card {
+    margin-top: 10px;
+  }
+
+  .card-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .update {
+    margin-top: 10px;
+  }
+
+  .cards {
+    margin: 8px 12px;
+    padding: .5rem;
+    width: 150px;
+    height: 180px;
+  }
+  
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 620px) {
   .search-box {
     margin-left: 18%;
   }
@@ -329,21 +351,46 @@ tablet screen orientation
 mobile phone screen
 ========== */
 @media screen and (max-width: 500px) {
-  .search-box {
-    margin-left: 10%;
+  .head-logo {
+    font-size: 18px;
   }
-  
-  form {
+
+  .search-box {
+    width: 300px;
+    margin-left: 8%;
+  }
+
+  .temp {
+    height: 100px;
+  }
+
+  .temp .img {
+    height: 80px;
+    width: 80px;
+  }
+
+  .reading {
+    margin: 0 auto;
     width: 300px;
   }
 
+  .fig {
+    padding: 8px;
+    height: 100px;
+  }
+
   .fig .deg {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .cards {
+    margin: .3rem;
+    padding: .2rem;
     width: 100px;
-    height: 120px;
+    height: 100px;
+  }
 
+  .day {
+    font-size: 10px;
   }
 }

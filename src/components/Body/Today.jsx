@@ -1,6 +1,6 @@
 import React from 'react';
 // import rain from "../images/rain-big.png";
-// import axios from "axios";
+import axios from "axios";
 
 const Today = () => {
    
