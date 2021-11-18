@@ -140,6 +140,7 @@ the weather display
 }
 
 .show-date p {
+  font-weight: 300;
   font-size: 32px;
 }
 
@@ -289,6 +290,11 @@ tablet screen orientation
     height: 120px;
   }
 
+  .show-date p {
+    font-size: 18px;
+    text-align: center;
+  }
+
   .fig {
     height: 150px;
   }
@@ -331,9 +337,8 @@ mobile phone screen
     width: 300px;
   }
 
-  .show-date p {
-    text-align: center;
-    font-weight: 300;
+  .fig .deg {
+    font-size: 18px;
   }
 
   .cards {
