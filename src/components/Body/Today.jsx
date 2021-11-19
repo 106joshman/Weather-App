@@ -1,8 +1,15 @@
-import React from 'react';
-// import rain from "../images/rain-big.png";
-// import axios from "axios";
+import React, { useState, useContext } from 'react';
+import Header from '../Header';
+
 
 const Today = () => {
+    const [weather, useWeather] = useState("15°c");
+    // const locationContext = React.createContext(location);
+    const [mood, useMood] = useState("Cloudy");
+    const location = useContext("");
+
+    
+    // const loc
    
     // date and time function
     const dateWork = (d) => {
@@ -18,9 +25,8 @@ const Today = () => {
     }
     
     // axios Api call function
-    /* const basURL = "htttp://api.openweathermap.org/data/2.5/weather?q=52490&appid=9ad0b189287d876d57d8ecf0fb0c07ed";
     
-    const [data, setData] = React.useState("");
+    /* const [data, setData] = React.useState("");
 
     React.useState(() => {
         axios
@@ -54,20 +60,23 @@ const Today = () => {
     //       .catch(err => console.error(err));
     //   }
 
+
+
     return (
         <div className="weather">
             {/* get daily location time */}
+        <React.createContext>
             <div className="show-date">
-                <p className="location">Lagos, Ng</p>
+                <p className="location">{location}</p>
                 <p className="date">{dateWork(new Date())}</p>
-                
             </div>
+        </React.createContext>
             {/* get location weather report */}
             <div className="temp">
                 <div className="img shower"></div>
                 <div className="fig">
-                    <div id="deg" className="deg">15°c</div>
-                    <div id="" className="w-mood">Cloudy</div>
+                    <div id="deg" className="deg">{weather}</div>
+                    <div id="" className="w-mood">{mood}</div>
                 </div>
             </div>
         </div>

@@ -151,7 +151,7 @@ the weather display
 
 .temp {
   height: 180px;
-  margin: 0 15px 18px;
+  margin: 10px 15px 18px;
 
   display: flex;
   flex-direction: row;
@@ -362,6 +362,7 @@ mobile phone screen
 
   .temp {
     height: 100px;
+  
   }
 
   .temp .img {
