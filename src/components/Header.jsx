@@ -1,37 +1,43 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import weatherContext from './store/weathercontext';
 // import Today from './Body/Today';
 import axios from "axios";
 
 const Header = () => {
+    const ctx = useContext(weatherContext)
     const api = {
-        base: "htttp://api.openweathermap.org/data/2.5/",
-    key: {/*"9ad0b189287d876d57d8ecf0fb0c07ed"*/}
+        base: "https://api.openweathermap.org/data/2.5/",
+    key: "9ad0b189287d876d57d8ecf0fb0c07ed"
     };
-    const location = useContext("");
+    const locationFind = (event)=>{
+        const {value} = event.target
+        ctx.setLocation(value)
+    }
+    const findLocation = (event)=>
+    {
+        search();
+        event.preventDefault();
+    }
     
-    const search = evt => {
-        if (evt.key === "Enter") {
+    const search = ()=> {
             axios
-            .get(`${api.base}weather?q=${location}&units=metric&appid=${api.key}`, {
-        timeout: 2000
-    })
-      .then(res => (res))
+            .get(`${api.base}weather?q=${ctx.location}&units=metric&appid=${api.key}`, {
+        timeout: 20000})
+      .then(res => console.log(res))
       .catch(err => console.error(err));
         }
-    }
     return (
         <div className="header">
             <div className="head-logo">
                 <span>D</span>ev-<span>G</span>uy
             </div>
             <div className="search-box">
-                <form action="to get location" method="get">
+                <form action="to get location" method="get" onSubmit={findLocation}>
                     <input 
                         type="search"
                         className="Search"
-                        onChange={e =>location(e.target.value)}
-                        value={location}
-                        onKeyPress={search}
+                        onChange={locationFind}
+                        value={ctx.location}
                         name="search-box"
                         placeholder="Enter city or location..."
                         id=""/>
@@ -40,5 +46,4 @@ const Header = () => {
         </div>
     );
 }
- 
 export default Header;
