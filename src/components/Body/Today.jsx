@@ -65,12 +65,10 @@ const Today = () => {
     return (
         <div className="weather">
             {/* get daily location time */}
-        <React.createContext>
             <div className="show-date">
                 <p className="location">{location}</p>
                 <p className="date">{dateWork(new Date())}</p>
             </div>
-        </React.createContext>
             {/* get location weather report */}
             <div className="temp">
                 <div className="img shower"></div>

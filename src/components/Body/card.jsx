@@ -5,7 +5,6 @@ import React from 'react';
 
 const Card = () => {
     const cardData = [1,2,3,4,5,6];
-
     return (
         // weather details
         <div className="card">
