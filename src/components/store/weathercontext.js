@@ -13,7 +13,9 @@ export const WeatherContextProvider = (props)=>{
         value={
             {
                 location:location,
-                setLocation:setLocation 
+                setLocation:setLocation,
+                // weather:weather,
+                // setWeather:setWeather
             }
         }
         >
