@@ -1,7 +1,6 @@
 import { useState} from 'react';
 import Body from './components/Body/Body';
-// import Header from './components/Header';
-// import weatherContext, { WeatherContextProvider } from './components/store/weathercontext';
+import logo from './components/images/logo.png';
 
 function App() {
   const [loadPage, setLoadpage] = useState(true);
@@ -14,9 +13,8 @@ function App() {
       <div className="App">
         {loadPage&& 
           <div className="load">
-            <div className="loader">
-              
-            </div>
+            <img src={logo} alt="weather app logo" srcset="" />
+            <p>Loading...</p>
           </div>}
         {!loadPage&& <Body />}
       </div>

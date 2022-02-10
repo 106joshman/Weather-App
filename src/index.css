@@ -14,10 +14,7 @@ body {
   flex: 1;
   flex-direction: column;
   height: 100vh;
-  background: url(./components/images/images.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
+  
 }
 
 :root {
@@ -35,10 +32,27 @@ loader styling
 .load {
   width: 100%;
   height: 100vh;
-  background: white;
+  background: var(--bg-dark);
 }
 
-.loader {
+.load p {
+  color: var(--txt-light);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.load img {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .loader {
   margin: 300px auto;
   border: 16px solid gray;
   border-top: 16px solid #182038;
@@ -57,7 +71,7 @@ loader styling
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 
 /*============
@@ -109,16 +123,28 @@ input::placeholder {
 /*==========
 the weather display
 ========== */
-main {
+.warm {
+  background: url(./components/images/images.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  
+}
+
+.cold {
+  background: url(./components/images/cold.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.container {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.weather-display {
-  height: 100vh;
-}
 
 .wrapper {
   text-align: center;

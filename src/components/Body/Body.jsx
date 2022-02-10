@@ -62,10 +62,12 @@ const Body = () => {
     }
     time = (hour + ":" + mins);
 
-    let icon = "http://openweathermap.org/img/wn/" + weather.weather[0].icon + ".png";
+    // let iconCode = weather.weather[0].icon;
+    // let icon = "http://openweathermap.org/img/wn/" + iconCode + ".png";
 
   return (
-    <main className="">
+    <main className={(typeof weather.main != "undefined") ? ((weather.main.temp < 16) ? 'cold' : 'warm') : 'warm'}>
+      <div className="container">
       {/* header search box */}
       <div className="header">
         <div className="search-box">
@@ -106,7 +108,7 @@ const Body = () => {
               </div>
               {/* weather image */}
               <div className="icon">
-                <img src={icon} alt="weather icon" srcset="" />
+                {/* <img src={icon} alt="weather icon" srcset="" /> */}
               </div>
               {/* cloudy state */}
               <div className="mood">
@@ -180,6 +182,7 @@ const Body = () => {
           </div>
         </div>
       )}
+      </div>
     </main>
   );
 };
